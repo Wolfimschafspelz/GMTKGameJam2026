@@ -6,13 +6,13 @@ var points: int
 
 # TODO: Wave management
 
-func withdraw_points(amount: int):
+func deposit_points(amount: int):
 	points += amount
 
 func can_buy(price: int) -> bool:
 	return points >= price
 
-func deposit_points(amount: int):
+func withdraw_points(amount: int):
 	if points - amount <= 0:
 		pass
 	points -= amount
