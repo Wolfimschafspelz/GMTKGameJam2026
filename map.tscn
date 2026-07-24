@@ -1,3 +1,22 @@
 [gd_scene format=3 uid="uid://onslalth6nex"]
 
-[node name="Map" type="Node" unique_id=1341810178]
+[ext_resource type="Texture2D" uid="uid://dmjsxltw1moxp" path="res://assets/Tiny Swords (Update 010)/UI/Pointers/02.png" id="1_c7s6e"]
+[ext_resource type="Script" uid="uid://du5jb8lmwgvxc" path="res://ui_layer.gd" id="2_wijl4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wijl4"]
+resource_name = "map_selection"
+texture = ExtResource("1_c7s6e")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_e6lj2"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_wijl4")
+
+[node name="Map" type="Node2D" unique_id=292755274]
+
+[node name="TileMap" type="Node2D" parent="." unique_id=318407639]
+
+[node name="UILayer" type="TileMapLayer" parent="TileMap" unique_id=361162234]
+tile_set = SubResource("TileSet_e6lj2")
+script = ExtResource("2_wijl4")
