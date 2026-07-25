@@ -1,4 +1,5 @@
 extends Tower
+@export var price: int = 50 # Preis des Turms (im Editor anpassbar)
 
 func _process(_delta: float) -> void:
 	if enemies.size() > 0:
