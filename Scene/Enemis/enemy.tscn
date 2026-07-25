@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://xpw888exegb8"]
+
+[ext_resource type="Texture2D" uid="uid://drldg0v5slfrs" path="res://assets/Tiny Swords (Update 010)/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="1_ispo5"]
+[ext_resource type="Script" uid="uid://bjknbe0jlrlqc" path="res://Scene/Enemis/Enemy.gd" id="1_tku6w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndjd3"]
+atlas = ExtResource("1_ispo5")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xxpcc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndjd3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ehwb3"]
+radius = 53.08484
+
+[node name="Enemis" type="Area2D" unique_id=111641583]
+script = ExtResource("1_tku6w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=473418128]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_xxpcc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1166506570]
+shape = SubResource("CircleShape2D_ehwb3")

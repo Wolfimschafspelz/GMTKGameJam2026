@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://cm1877enplgll"]
-
-[ext_resource type="PackedScene" uid="uid://c3jtj7qf88j0u" path="res://Scene/tower.tscn" id="1_pn2id"]
-
-[node name="Tower_basic" unique_id=1520585264 instance=ExtResource("1_pn2id")]

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cwywkty5tjd75"]
+
+[ext_resource type="Texture2D" uid="uid://c8f67a8l7mxcl" path="res://assets/Tiny Swords (Update 010)/Factions/Knights/Troops/Archer/Arrow/Arrow.png" id="1_l4kia"]
+[ext_resource type="Script" uid="uid://d3fvf7rp1mlal" path="res://Scene/Projectiles/projectile.gd" id="1_p2bp1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehwb3"]
+size = Vector2(68, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2bp1"]
+atlas = ExtResource("1_l4kia")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ehwb3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2bp1")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Projectile" type="Area2D" unique_id=194820541]
+collision_layer = 2
+script = ExtResource("1_p2bp1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=437929828]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_ehwb3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1561068845]
+sprite_frames = SubResource("SpriteFrames_ehwb3")

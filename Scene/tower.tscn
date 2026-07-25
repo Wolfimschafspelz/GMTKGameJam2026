@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://c3jtj7qf88j0u"]
-
-[node name="Tower" type="Node2D" unique_id=1520585264]
-
-[node name="Base" type="Sprite2D" parent="." unique_id=1868780848]
-
-[node name="Turret" type="Sprite2D" parent="." unique_id=1162709836]
