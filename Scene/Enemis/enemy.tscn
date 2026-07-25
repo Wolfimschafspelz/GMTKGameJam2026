@@ -19,9 +19,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ehwb3"]
-radius = 53.08484
+radius = 27.166155
 
 [node name="Enemis" type="Area2D" unique_id=111641583]
+collision_layer = 3
 script = ExtResource("1_tku6w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=473418128]

@@ -17,7 +17,9 @@ func _ready() -> void:
 	$Tower_basic.connect("shoot", creat_Projectile)
 	
 	
-func creat_Projectile(pos: Vector2,angle:float, projectile_enum:Data.Projectile):
+func creat_Projectile(pos: Vector2, angle: float, projectile_enum: Data.Projectile):
 	var projectile = projectile_scene.instantiate()
-	projectile.setup(pos, angle,projectile_enum)
-	$Projectile.add_child(projectile)
+	projectile.setup(pos, angle, projectile_enum)
+	
+	# Fügt das Projektil direkt dem Level hinzu:
+	add_child(projectile)
