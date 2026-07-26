@@ -121,7 +121,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CreditsScreen" type="TextureRect" parent="." unique_id=1798949460]
-visible = false
 layout_mode = 0
 offset_top = 150.0
 offset_right = 576.0
@@ -141,6 +140,16 @@ offset_right = 200.0
 offset_bottom = 181.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/default_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Developed by:
+				- wolfimschafspelz
+				- AlbrErik
+				- Soulheart
+				- Nono0104
+
+Assets:
+	- Pixel Frog - Tiny Swords  (CC0)"
 
 [node name="CloseButton" type="TextureButton" parent="CreditsScreen" unique_id=329558964]
 layout_mode = 1
