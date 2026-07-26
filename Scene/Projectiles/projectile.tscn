@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://d3fvf7rp1mlal" path="res://Scene/Projectiles/projectile.gd" id="1_p2bp1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehwb3"]
-size = Vector2(68, 27)
+size = Vector2(65, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2bp1"]
 atlas = ExtResource("1_l4kia")
@@ -42,7 +42,7 @@ collision_mask = 2
 script = ExtResource("1_p2bp1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=437929828]
-position = Vector2(0, 3.5)
+position = Vector2(-1.5, 2.5)
 shape = SubResource("RectangleShape2D_ehwb3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1561068845]

@@ -5,7 +5,11 @@
 [node name="Tower" type="Node2D" unique_id=1520585264]
 script = ExtResource("1_mq4ia")
 
-[node name="Base" type="Sprite2D" parent="." unique_id=1868780848]
+[node name="Base" type="Sprite2D" parent="." unique_id=65533352]
+
+[node name="Archer" type="AnimatedSprite2D" parent="." unique_id=2137964988]
+
+[node name="Bow" type="AnimatedSprite2D" parent="Archer" unique_id=1238695165]
 
 [node name="EnemyDetectionArea" type="Area2D" parent="." unique_id=948351111]
 

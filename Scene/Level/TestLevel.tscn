@@ -17,4 +17,7 @@ position = Vector2(219, -3)
 curve = SubResource("Curve2D_4omdu")
 
 [node name="Tower_basic" parent="." unique_id=1520585264 instance=ExtResource("2_mb1hm")]
-position = Vector2(566, 230)
+position = Vector2(562, 168)
+
+[node name="Tower_basic2" parent="." unique_id=39801457 instance=ExtResource("2_mb1hm")]
+position = Vector2(1055, 85)
