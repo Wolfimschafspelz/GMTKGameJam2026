@@ -4,7 +4,7 @@ extends Tower
 @export var price: int = 50
 
 # Zustand des Turms (ob er aktuell angreifen darf)
-var is_active := false
+var is_active := true
 
 # Referenz auf die Animation des Bogens (wird geladen, sobald der Node bereit ist)
 @onready var bow_sprite: AnimatedSprite2D = $Archer/Bow
@@ -67,7 +67,7 @@ func _reset_to_idle() -> void:
 
 func _on_enemy_detection_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	# Turm per Linksklick auf die Detection Area aktivieren
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 		activate_tower()
 		
 func activate_tower() -> void:

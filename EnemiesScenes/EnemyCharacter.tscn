@@ -7,7 +7,8 @@ radius = 28.0
 height = 86.0
 
 [node name="Enemy" type="Area2D" unique_id=355062164]
-collision_mask = 2
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_x1oqc")
 
 [node name="BarrelSprite2D" type="Sprite2D" parent="." unique_id=343852698]

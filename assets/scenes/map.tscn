@@ -26,6 +26,10 @@
 [ext_resource type="Texture2D" uid="uid://spaqvipcekps" path="res://assets/Tiny Swords (Update 010)/Deco/10.png" id="24_gc8ud"]
 [ext_resource type="Texture2D" uid="uid://bjbovtaotp2vw" path="res://assets/Tiny Swords (Update 010)/UI/Pointers/02.png" id="25_enjkg"]
 [ext_resource type="Script" uid="uid://du5jb8lmwgvxc" path="res://assets/scripts/ui_layer.gd" id="26_t006w"]
+[ext_resource type="Texture2D" uid="uid://54vkmlycw0mp" path="res://assets/Tiny Swords (Update 010)/Factions/Goblins/Buildings/Wood_Tower/Wood_Tower_Purple.png" id="27_gq27q"]
+[ext_resource type="Texture2D" uid="uid://w73timjceb1t" path="res://assets/Tiny Swords (Update 010)/Factions/Knights/Buildings/Castle/Castle_Blue.png" id="28_t006w"]
+[ext_resource type="Texture2D" uid="uid://g8ykh4h8r8g2" path="res://assets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Yellow/Warrior_Yellow.png" id="29_55aoa"]
+[ext_resource type="Script" uid="uid://by7la16k1jfv1" path="res://assets/scenes/animated_sprite_2d.gd" id="30_vgntr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iw27f"]
 resource_name = "water"
@@ -626,6 +630,113 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_wijl4")
 
+[sub_resource type="Curve2D" id="Curve2D_10c5h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 352, 320, 0, 0, 0, 0, 352, 672, 0, 0, 0, 0, 1440, 672, 0, 0, 0, 0, 1440, 864, 0, 0, 0, 0, 1600, 864)
+}
+point_count = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t006w"]
+atlas = ExtResource("27_gq27q")
+region = Rect2(0, 0, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x3bc"]
+atlas = ExtResource("27_gq27q")
+region = Rect2(256, 0, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55aoa"]
+atlas = ExtResource("27_gq27q")
+region = Rect2(512, 0, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgntr"]
+atlas = ExtResource("27_gq27q")
+region = Rect2(768, 0, 256, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t006w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7x3bc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55aoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgntr")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6q0m6"]
+atlas = ExtResource("28_t006w")
+region = Rect2(0, 0, 320, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gq27q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6q0m6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfbiv"]
+atlas = ExtResource("29_55aoa")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddidg"]
+atlas = ExtResource("29_55aoa")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtl0s"]
+atlas = ExtResource("29_55aoa")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3ole"]
+atlas = ExtResource("29_55aoa")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_380cs"]
+atlas = ExtResource("29_55aoa")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3xrw"]
+atlas = ExtResource("29_55aoa")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t006w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfbiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddidg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtl0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3ole")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_380cs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3xrw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Map" type="Node2D" unique_id=292755274]
 script = ExtResource("1_10c5h")
 
@@ -663,3 +774,22 @@ tile_set = SubResource("TileSet_e0an3")
 [node name="UILayer" type="TileMapLayer" parent="." unique_id=361162234]
 tile_set = SubResource("TileSet_e6lj2")
 script = ExtResource("26_t006w")
+
+[node name="EnemyPath" type="Path2D" parent="." unique_id=1020850752]
+curve = SubResource("Curve2D_10c5h")
+
+[node name="EnemyTower" type="AnimatedSprite2D" parent="." unique_id=1931848916]
+position = Vector2(352, 256)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+
+[node name="PlayerTower" type="AnimatedSprite2D" parent="." unique_id=1129227988]
+position = Vector2(1672, 808)
+rotation = -0.0010251134
+scale = Vector2(0.7, 0.71875)
+sprite_frames = SubResource("SpriteFrames_gq27q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerTower" unique_id=1045468792]
+position = Vector2(0.046862315, -44.521713)
+sprite_frames = SubResource("SpriteFrames_t006w")
+flip_h = true
+script = ExtResource("30_vgntr")

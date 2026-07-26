@@ -1,7 +1,7 @@
 extends TileMapLayer
 
 @onready var path_layer: TileMapLayer = $"../PathLayer"
-var tower_scene = preload("res://assets/scenes/node_2d.tscn") # TODO: Change to actual tower scene
+var tower_scene = preload("res://Scene/Tower/tower_basic.tscn")
 
 var is_active = false # control selection ui
 var last_hover = null # the last mouse hover position
@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 func _input(event):
 	if is_active:
 		if event is InputEventMouseButton:
-			if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed and event.button_index == MOUSE_BUTTON_LEFT and is_active:
 				var cur_tile = get_hovered_tile()
 				if is_valid_tile(cur_tile):
 					place_tower(cur_tile)

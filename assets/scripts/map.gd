@@ -1,9 +1,11 @@
 extends Node2D
 
-@onready var ui_layer = $UILayer
+@onready var ui_layer: TileMapLayer = $UILayer
+@onready var enemy_path: Path2D = $"EnemyPath"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameMode.path = enemy_path
 	enable_selection()
 
 
