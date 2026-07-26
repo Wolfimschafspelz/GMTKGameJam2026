@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bxgc8j4pqxh0w"]
+
+[ext_resource type="PackedScene" uid="uid://dky7g8jod0a30" path="res://EnemiesScenes/EnemyCharacter.tscn" id="1_wqu1f"]
+[ext_resource type="Texture2D" uid="uid://dit3hpc261s1t" path="res://assets/Tiny Swords (Update 010)/Factions/Goblins/Troops/Barrel/Blue/Barrel_BlueDefault.png" id="2_iai0r"]
+[ext_resource type="Script" uid="uid://hriluokxvb5w" path="res://EnemiesScenes/enemy_bluescript.gd" id="2_k31b4"]
+
+[node name="EnemyBlue" unique_id=355062164 instance=ExtResource("1_wqu1f")]
+script = ExtResource("2_k31b4")
+
+[node name="BarrelSprite2D" parent="." index="0" unique_id=343852698]
+texture = ExtResource("2_iai0r")
