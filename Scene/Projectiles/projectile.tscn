@@ -16,12 +16,12 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p2bp1")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1wxvf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm2uv"]
 atlas = ExtResource("1_l4kia")
 region = Rect2(0, 64, 64, 64)
 
@@ -29,9 +29,9 @@ region = Rect2(0, 64, 64, 64)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1wxvf")
+"texture": SubResource("AtlasTexture_rm2uv")
 }],
-"loop": 1,
+"loop": 2,
 "name": &"default",
 "speed": 5.0
 }]
@@ -50,3 +50,5 @@ sprite_frames = SubResource("SpriteFrames_ehwb3")
 
 [node name="Arrow_broken" type="AnimatedSprite2D" parent="." unique_id=867069607]
 sprite_frames = SubResource("SpriteFrames_xxpcc")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
