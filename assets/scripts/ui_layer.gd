@@ -1,7 +1,7 @@
 extends TileMapLayer
 
 @onready var path_layer: TileMapLayer = $"../PathLayer"
-var tower_scene = preload("res://node_2d.tscn") # TODO: Change to actual tower scene
+var tower_scene = preload("res://assets/scenes/node_2d.tscn") # TODO: Change to actual tower scene
 
 var is_active = false # control selection ui
 var last_hover = null # the last mouse hover position
