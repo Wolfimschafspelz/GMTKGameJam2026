@@ -6,8 +6,8 @@ var points: int
 var current_wave: int
 var wave_size: int
 var enemies_remaining: int
+@export var path: Path2D
 
-# TODO: Wave management
 func spawn_wave():
 	WaveSpawner.spawn_wave(wave_size)
 	enemies_remaining = wave_size
