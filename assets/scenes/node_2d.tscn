@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bmwuq1veli21s"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y32ns"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_y32ns"]
+
+[node name="Node2D" type="Node2D" unique_id=1135412502]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1310722007]
+material = SubResource("CanvasItemMaterial_y32ns")
+scale = Vector2(32, 32)
+texture = SubResource("CanvasTexture_y32ns")

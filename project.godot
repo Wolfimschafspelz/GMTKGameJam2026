@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="GmtkGameJam2026"
-run/main_scene="uid://tcxnmdp6k8ql"
+run/main_scene="uid://onslalth6nex"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameMode="*uid://jk3804nffgj1"
+WaveSpawner="*uid://c7mmv7s50u3xk"
 
 [display]
 
