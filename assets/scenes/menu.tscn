@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://4ooh5b7r2ugk" path="res://assets/Tiny Swords (Update 010)/UI/Banners/Carved_9Slides.png" id="9_ujvk5"]
 [ext_resource type="Script" uid="uid://brx2vicjja842" path="res://assets/scripts/close_button.gd" id="10_0ujva"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_0ujva"]
+font_size = 50
+font_color = Color(0.046729654, 0, 0.32817715, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_l0v2w"]
 font_size = 22
 font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
@@ -38,6 +42,15 @@ layout_mode = 0
 offset_right = 576.0
 offset_bottom = 150.0
 texture = ExtResource("1_q8r6g")
+
+[node name="Titel" type="Label" parent="TitelBackground" unique_id=1415858867]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 17.0
+offset_right = 530.0
+offset_bottom = 100.0
+text = "Sleepy Towers"
+label_settings = SubResource("LabelSettings_0ujva")
 
 [node name="Buttons" type="VBoxContainer" parent="." unique_id=1823923789]
 layout_mode = 0
