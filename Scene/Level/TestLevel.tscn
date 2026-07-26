@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://tcxnmdp6k8ql"]
+
+[ext_resource type="Script" uid="uid://by10rncq6c2tp" path="res://Scene/Level/level.gd" id="1_ekdd2"]
+[ext_resource type="PackedScene" uid="uid://cm1877enplgll" path="res://Scene/Tower/tower_basic.tscn" id="2_mb1hm"]
+
+[sub_resource type="Curve2D" id="Curve2D_4omdu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 63, 72, 0, 0, 0, 0, 636, 65, 0, 0, 0, 0, 667, 218, 0, 0, 0, 0, 665, 339, 0, 0, 0, 0, 669, 559, 0, 0, 0, 0, 75, 559)
+}
+point_count = 6
+
+[node name="TestLevel" type="Node2D" unique_id=257067976]
+script = ExtResource("1_ekdd2")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=342408677]
+position = Vector2(219, -3)
+curve = SubResource("Curve2D_4omdu")
+
+[node name="Tower_basic" parent="." unique_id=1520585264 instance=ExtResource("2_mb1hm")]
+position = Vector2(401, 164)
+
+[node name="Tower_basic2" parent="." unique_id=39801457 instance=ExtResource("2_mb1hm")]
+position = Vector2(912, -84)
