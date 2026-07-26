@@ -102,6 +102,10 @@ animations = [{
 atlas = ExtResource("5_tmyyo")
 region = Rect2(0, 0, 192, 192)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_orr7r"]
+atlas = ExtResource("5_tmyyo")
+region = Rect2(0, 0, 192, 192)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxe5v"]
 atlas = ExtResource("5_tmyyo")
 region = Rect2(0, 0, 192, 192)
@@ -142,6 +146,14 @@ animations = [{
 }],
 "loop": 1,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orr7r")
+}],
+"loop": 1,
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -193,6 +205,7 @@ sprite_frames = SubResource("SpriteFrames_mq4ia")
 
 [node name="Bow" parent="Archer" index="0" unique_id=1238695165]
 sprite_frames = SubResource("SpriteFrames_qxe5v")
+animation = &"idle"
 
 [node name="EnemyDetectionArea" parent="." index="2" unique_id=948351111]
 collision_mask = 2
