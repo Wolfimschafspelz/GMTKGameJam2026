@@ -191,15 +191,16 @@ custom_solver_bias = 0.29
 radius = 278.11508
 
 [node name="Tower_basic" unique_id=1520585264 instance=ExtResource("1_hck26")]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("2_y7kpe")
 price = 50
 
 [node name="Base" parent="." index="0" unique_id=65533352]
-position = Vector2(3, 68)
+position = Vector2(0, -50)
 texture = ExtResource("3_gpvvy")
 
 [node name="Archer" parent="." index="1" unique_id=2137964988]
-position = Vector2(4.0000014, 3.0000029)
+position = Vector2(0, -105)
 scale = Vector2(1.0625, 0.9765625)
 sprite_frames = SubResource("SpriteFrames_mq4ia")
 

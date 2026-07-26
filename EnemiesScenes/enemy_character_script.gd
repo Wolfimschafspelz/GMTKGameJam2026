@@ -19,8 +19,9 @@ func _process(delta: float) -> void:
 	
 	if char_path_follow.progress_ratio >= 0.99:
 		print('boom')
-		queue_free()
 		GameMode.take_damage(enemy_dmg)
+		GameMode.notify_enemy_killed()
+		queue_free()
 	elif char_path_follow.progress_ratio >= 0.90:
 		$BarrelSprite2D.texture = char_sprite_boom
 		
@@ -29,4 +30,6 @@ func dmg_enemy(dmg_num):
 	
 	if enemy_lp <= 0:
 		print('aaaahhhh')
+		GameMode.notify_enemy_killed()
+		GameMode.deposit_points(1)
 		queue_free()

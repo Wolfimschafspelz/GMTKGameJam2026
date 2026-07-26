@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bogrbuflfav8s"]
+
+[ext_resource type="PackedScene" uid="uid://onslalth6nex" path="res://assets/scenes/map.tscn" id="1_cb66b"]
+[ext_resource type="PackedScene" uid="uid://g7yrmcm3kuh1" path="res://assets/scenes/menu.tscn" id="2_dis88"]
+[ext_resource type="Texture2D" uid="uid://cpnnyh0sp1u8m" path="res://assets/Tiny Swords (Update 010)/UI/Buttons/Button_Blue_3Slides.png" id="3_3w2km"]
+[ext_resource type="Texture2D" uid="uid://bgq6gdekivthf" path="res://assets/Tiny Swords (Update 010)/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="4_wfsp4"]
+[ext_resource type="Texture2D" uid="uid://cgmm0e5suuerq" path="res://assets/Tiny Swords (Update 010)/UI/Buttons/Button_Hover_3Slides.png" id="5_pw37s"]
+[ext_resource type="Texture2D" uid="uid://cil7dxmllct85" path="res://assets/Tiny Swords (Update 010)/UI/Buttons/Button_Disable_3Slides.png" id="6_k2t1h"]
+[ext_resource type="Script" uid="uid://ccvcg3ptt3h5k" path="res://assets/scripts/next_wave.gd" id="7_3w2km"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pkhv0"]
+font_size = 22
+font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Game" type="Node2D" unique_id=522833322]
+
+[node name="Map" parent="." unique_id=292755274 instance=ExtResource("1_cb66b")]
+
+[node name="UI" type="Control" parent="." unique_id=945945354]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Menu" parent="UI" unique_id=420153426 instance=ExtResource("2_dis88")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -334.0
+offset_right = -288.0
+offset_bottom = -334.0
+pivot_offset = Vector2(288, 334)
+
+[node name="NextWave" type="TextureButton" parent="UI" unique_id=19293363]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -192.0
+offset_bottom = 64.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_3w2km")
+texture_pressed = ExtResource("4_wfsp4")
+texture_hover = ExtResource("5_pw37s")
+texture_disabled = ExtResource("6_k2t1h")
+script = ExtResource("7_3w2km")
+
+[node name="Text" type="Label" parent="UI/NextWave" unique_id=1340405091]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -24.0
+offset_right = 26.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Next Wave"
+label_settings = SubResource("LabelSettings_pkhv0")
