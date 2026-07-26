@@ -2,25 +2,62 @@ extends Area2D
 
 var direction: Vector2
 var speed := 400.0
-var damage := 10.0 # Bspw. Schaden aus Data.Projectile laden
+var damage := 10.0
+var has_hit := false
 
-func setup(pos: Vector2, angle: float, projectile_enum: Data.Projectile) -> void:
-	position = pos
+# Beide Nodes als Referenz holen:
+@onready var flying_arrow: AnimatedSprite2D = $AnimatedSprite2D
+@onready var broken_arrow = $Arrow_broken
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+
+func _ready() -> void:
+	# Beim Start: Fliegender Pfeil sichtbar, gebrochener Pfeil unsichtbar
+	if flying_arrow:
+		flying_arrow.visible = true
+		flying_arrow.play("default") # Oder deine Flug-Animation
+	if broken_arrow:
+		broken_arrow.visible = false
+
+func setup(pos: Vector2, angle: float, _projectile_enum: Data.Projectile) -> void:
+	global_position = pos
 	rotation = angle
-	# Vector2.RIGHT ist die Standard-Blickrichtung (0 Grad) in Godot
 	direction = Vector2.RIGHT.rotated(angle)
-	# Hier kannst du z.B. spätere Logik für das Enum einbauen
+	has_hit = false
 
 func _process(delta: float) -> void:
-	# Richtige Verwendung von delta für eine flüssige Bewegung
-	position += direction * speed * delta
+	if not has_hit:
+		global_position += direction * speed * delta
 
-# Signal "area_entered" vom Area2D-Node verbinden
 func _on_area_entered(area: Area2D) -> void:
-	# Prüfen, ob die getroffene Area ein Gegner ist
+	if has_hit: 
+		return
+	
+	var target = null
 	if area.has_method("take_damage"):
-		area.take_damage(damage)
-		queue_free() # Löscht das Projektil bei Treffer
+		target = area
 	elif area.owner and area.owner.has_method("take_damage"):
-		area.owner.take_damage(damage)
-		queue_free() # Löscht das Projektil bei Treffer
+		target = area.owner
+		
+	if target:
+		target.take_damage(damage)
+		
+		has_hit = true
+		collision_shape.set_deferred("disabled", true)
+		
+		if flying_arrow:
+			flying_arrow.visible = false
+		
+		if broken_arrow:
+			broken_arrow.visible = true
+			
+			if broken_arrow is AnimatedSprite2D and broken_arrow.sprite_frames.has_animation("impact"):
+				broken_arrow.play("impact")
+				# WICHTIG: await wartet direkt, bis die Animation fertig ist, und löscht dann!
+				await broken_arrow.animation_finished
+				queue_free()
+			else:
+				# Falls es ein normales Sprite2D ist: 0.5 Sekunden anzeigen, dann löschen
+				await get_tree().create_timer(0.5).timeout
+				queue_free()
+		else:
+			queue_free()

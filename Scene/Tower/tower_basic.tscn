@@ -175,6 +175,7 @@ radius = 215.39267
 
 [node name="Tower_basic" unique_id=1520585264 instance=ExtResource("1_hck26")]
 script = ExtResource("2_y7kpe")
+price = 50
 
 [node name="Base" parent="." index="0" unique_id=1868780848]
 position = Vector2(4.0000014, 3.0000029)

@@ -21,6 +21,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wxvf"]
+atlas = ExtResource("1_l4kia")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xxpcc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wxvf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Projectile" type="Area2D" unique_id=194820541]
 collision_layer = 3
 collision_mask = 2
@@ -32,3 +47,6 @@ shape = SubResource("RectangleShape2D_ehwb3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1561068845]
 sprite_frames = SubResource("SpriteFrames_ehwb3")
+
+[node name="Arrow_broken" type="AnimatedSprite2D" parent="." unique_id=867069607]
+sprite_frames = SubResource("SpriteFrames_xxpcc")
