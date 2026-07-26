@@ -3,7 +3,4 @@ extends Node
 
 enum Projectile {
 	SINGLE,
-	BASIC,
-	FIRE,
-	ICE
 }
